@@ -1,0 +1,9 @@
+#bars {
+  display: flex;
+}
+
+.bar {
+  border: 2px solid black;
+  width: 20px;
+  margin-right: -2px;
+}
