@@ -5,13 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sort Visualizer</title>
+
+    <link rel="stylesheet" href="https://materialdesignicons.com/cdn/2.0.46/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
 
 <body>
+    <button onclick="genArray()">Generate Array</button>
 
     <div id="bars"></div>
+
+
+    <div class="slider-container">
+        <input type="range" min="0" max="100" value="0" class="slider" id="slider">
+    </div>
+
+    <div class="toolbar">
+        <button id="toggle" onclick="togglePlay()">
+            <i class="mdi mdi-play"></i>
+        </button>
+        <!-- <button onclick="pauseAnimation()">Pause</button> -->
+    </div>
 </body>
 
 </html>

@@ -5,5 +5,39 @@
 .bar {
   border: 2px solid black;
   width: 20px;
-  margin-right: -2px;
+  margin-right: 1px;
+}
+
+.comparing {
+  border-bottom: 20px solid rgb(255, 0, 149);
+}
+
+.un-ordered {
+  background: red;
+}
+
+.sorted {
+  background: lightgreen;
+}
+.ordered {
+  background: green;
+}
+
+input.slider {
+  width: 100%;
+}
+
+.start {
+  border-top: 20px solid red;
+  margin-top: -20px;
+}
+
+.end {
+  border-top: 20px solid red;
+  margin-top: -20px;
+}
+
+.mid {
+  border-top: 20px solid pink;
+  margin-top: -20px;
 }
