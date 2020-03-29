@@ -8,24 +8,55 @@
 
     <link rel="stylesheet" href="https://materialdesignicons.com/cdn/2.0.46/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <!-- <script src="sorting-algorithms.js"></script> -->
+    <script type="module" src="app.js"></script>
 </head>
 
 <body>
-    <button onclick="genArray()">Generate Array</button>
+    <div class="page-wrapper">
+        <div class="toolbar toolbar-top">
+            <button id="generateArrayBtn">Generate Array</button>
 
-    <div id="bars"></div>
+            <!-- Array Size -->
+            <div class="slider-container">
+                <label for="arraySizeSliderElement">Array size</label>
+                <input type="range" min="4" max="200" value="4" class="slider" id="arraySizeSliderElement">
+            </div>
 
+            <!-- Animation SPeed -->
+            <div class="slider-container animation-speed">
+                <label for="animationSpeedSliderElement">Animation Speed</label>
+                <div>
+                    <span>Fast</span>
+                    <input type="range" min="1" max="500" value="1" class="slider" id="animationSpeedSliderElement">
+                    <span>Slow</span>
+                </div>
+            </div>
 
-    <div class="slider-container">
-        <input type="range" min="0" max="100" value="0" class="slider" id="slider">
-    </div>
+            <!-- Sorting Algorithm -->
+            <select name="sorting-algorithms" id="sortingAlgorithms">
+                <option value="mergeSort">Merge Sort</option>
+                <option value="quickSort">Quick Sort</option>
+            </select>
+        </div>
 
-    <div class="toolbar">
-        <button id="toggle" onclick="togglePlay()">
-            <i class="mdi mdi-play"></i>
-        </button>
-        <!-- <button onclick="pauseAnimation()">Pause</button> -->
+        <div id="barsElement"></div>
+
+        <div class="bottom">
+            <div class="slider-container">
+                <input type="range" min="0" max="100" value="0" class="slider" id="sliderElement">
+            </div>
+
+            <div class="toolbar toolbar-bottom">
+                <button id="toggleAnimationBtn" class="btn-toggle" title="Play / Pause">
+                    <i class="mdi mdi-play"></i>
+                </button>
+                <button id="stopAnimationBtn" class="btn-stop" title="Stop">
+                    <i class="mdi mdi-stop"></i>
+                </button>
+                <!-- <button onclick="pauseAnimation()">Pause</button> -->
+            </div>
+        </div>
     </div>
 </body>
 
