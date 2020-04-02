@@ -1,6 +1,7 @@
 
 export function mergeSort(barsData) {
     var animationFrames = [];
+    var sorted = [];
     function addFrame({ compare = [], orderedIndex, start, mid, end }) {
         animationFrames.push({
             arr: barsData.slice(0),
@@ -9,6 +10,7 @@ export function mergeSort(barsData) {
             start,
             mid,
             end,
+            // sorted: start == 0 && end == barsData.length ? sorted.slice() : []
         })
     }
 
@@ -67,7 +69,7 @@ export function mergeSort(barsData) {
 
     addFrame({})
     mergeSort(barsData, 0, barsData.length - 1)
-    addFrame({ parentArgs: [0, (barsData.length - 1) / 2, barsData.length - 1] })
+    addFrame({ start: 0, mid: (barsData.length - 1) / 2, end: barsData.length - 1 })
 
     return {
         animationFrames,
@@ -76,7 +78,7 @@ export function mergeSort(barsData) {
             return frame.arr.map((bar, index) => {
                 let { arr, compare = [], orderedIndex, start, mid, end } = frame
                 return `
-            <div class="bar ${compare.includes(index) ? 'comparing' : ''} ${orderedIndex == index ? 'ordered' : ''} ${start == index ? 'start' : ''} ${end == index ? 'end' : ''} ${mid == index ? 'mid' : ''} " style="height: ${bar}px; "></div>
+            <div class="bar ${compare.includes(index) ? 'comparing' : ''} ${(start == 0 && end == arr.length - 1) && (compare[0] == undefined || index < compare[0]) ? 'sorted' : ''} ${orderedIndex == index ? 'ordered' : ''} ${start == index ? 'start' : ''} ${end == index ? 'end' : ''} ${mid == index ? 'mid' : ''} " style="height: ${bar}px; "></div>
         `}).join("")
         }
     };

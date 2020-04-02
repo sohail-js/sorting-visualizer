@@ -99,8 +99,8 @@ input.slider {
   background-color: #28c328;
 }
 
-.bottom {
-}
+/* .bottom {
+} */
 
 .animation-speed > div {
   display: flex;
@@ -108,7 +108,8 @@ input.slider {
 }
 
 .pivot {
-  border: 2px solid red;
+  /* border: 2px solid red; */
+  background: #ffac00;
 }
 .swap {
   background-color: pink;
