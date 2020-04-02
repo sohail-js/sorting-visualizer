@@ -33,9 +33,9 @@ body {
   background: red;
 }
 
-/* .sorted {
+.sorted {
   background: lightgreen;
-} */
+}
 .ordered {
   background: #31d131;
 }
@@ -45,12 +45,12 @@ input.slider {
 }
 
 .start {
-  border-top: 20px solid #f819f1;
+  border-top: 20px solid #f819f1 !important;
   margin-top: -20px;
 }
 
 .end {
-  border-top: 20px solid #f819f1;
+  border-top: 20px solid #f819f1 !important;
   margin-top: -20px;
 }
 
@@ -105,4 +105,11 @@ input.slider {
 .animation-speed > div {
   display: flex;
   align-items: center;
+}
+
+.pivot {
+  border: 2px solid red;
+}
+.swap {
+  background-color: pink;
 }

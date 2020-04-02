@@ -160,4 +160,7 @@ toggleAnimationBtn.onclick = togglePlay;
 stopAnimationBtn.onclick = stopAnimation;
 generateArrayBtn.onclick = genArray;
 
-sortingAlgorithms.onchange = sort;
+sortingAlgorithms.onchange = () => {
+    genArray();
+    // sort();
+};
