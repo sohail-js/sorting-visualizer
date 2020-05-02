@@ -1,0 +1,242 @@
+$color-dark-1: #28293d;
+$color-blue: #3568d4;
+
+@mixin mdi-icon {
+    display: inline-block;
+    font: normal normal normal 24px/1 "Material Design Icons";
+    font-size: inherit;
+    text-rendering: auto;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    font-family: "Jura", sans-serif;
+}
+body {
+    background-color: $color-dark-1;
+    color: #fff;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: calc(100vh - 16px);
+    margin: 0;
+    padding: 0 50px;
+}
+#barsElement {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.bar {
+    /* border: 2px solid black; */
+    background: #9dbff8;
+    width: 20px;
+    margin-right: 1px;
+    position: relative;
+    border-radius: 18px;
+}
+
+.un-ordered {
+    background: red;
+}
+
+.sorted {
+    background: #05c270;
+}
+.ordered {
+    background: #05c270;
+}
+
+input.slider {
+    width: 100%;
+}
+
+.start {
+    // border-top: 20px solid #f819f1 !important;
+    // margin-top: -20px;
+    &:before {
+        content: "\F061F";
+        position: absolute;
+        top: -24px;
+        left: -2px;
+        color: #fff;
+        @include mdi-icon();
+        font-size: x-large;
+    }
+}
+
+.end {
+    // border-top: 20px solid #f819f1 !important;
+    // margin-top: -20px;
+    &:before {
+        content: "\F0620";
+        position: absolute;
+        top: -24px;
+        right: -2px;
+        color: #fff;
+        @include mdi-icon();
+        font-size: x-large;
+    }
+}
+
+.comparing {
+    // border-bottom: 20px solid #ff5b5b;
+    display: flex;
+    justify-content: center;
+    &::after {
+        content: "\F005D";
+        position: absolute;
+        bottom: -23px;
+        z-index: 10;
+        // right: 0;
+        color: #93ff5b;
+        @include mdi-icon();
+        font-size: x-large;
+    }
+}
+/* .mid {
+    border-top: 20px solid pink;
+    margin-top: -20px;
+  } */
+
+.toolbar {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+}
+
+.toolbar-top > * {
+    margin-right: 30px;
+}
+
+.toolbar-bottom > button:first-child {
+    margin-right: 7px;
+}
+
+// .toolbar-bottom button:hover {
+//     /* transform: scale(1.1); */
+//     box-shadow: 0 2px 5px 3px #00000040;
+// }
+
+// .toolbar-bottom button:active {
+//     transform: scale(0.9);
+//     box-shadow: 0 2px 5px 3px #00000040;
+// }
+
+// .btn-toggle {
+//     background-color: #1e76dc;
+//     margin-right: 10px;
+// }
+// .btn-stop {
+//     background-color: #28c328;
+// }
+
+/* .bottom {
+  } */
+
+.animation-speed > div {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+
+    > *:not(:first-child) {
+        margin-left: 10px;
+    }
+}
+
+.pivot {
+    /* border: 2px solid red; */
+    background: #ffac00;
+}
+.swap {
+    background-color: #f13737;
+}
+
+.btn {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    &-primary {
+        background-color: $color-blue;
+        color: #fff;
+        box-shadow: 0px 5px 13px 0px #1f58d18c;
+    }
+    &-primary-outline {
+        border: 1px solid $color-blue;
+        color: #fff;
+        box-shadow: 0px 5px 13px 0px #1f58d18c;
+        background-color: transparent;
+    }
+    &-secondary {
+        background-color: #28c328;
+        color: #fff;
+        box-shadow: 0px 5px 13px 0px #1fd13d8c;
+    }
+    &-rounded {
+        border-radius: 100px;
+    }
+}
+
+select {
+    padding: 9px 5px;
+    border-radius: 10px;
+    border: 1px solid $color-blue;
+    color: #fff;
+    box-shadow: 0px 5px 13px 0px #1f58d18c;
+    background-color: transparent;
+    cursor: pointer;
+
+    option {
+        color: #000;
+    }
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 5px; /* Specified height */
+    background: #d3d3d3b7; /* Grey background */
+    outline: none; /* Remove outline */
+    // opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+    transition: background 0.2s;
+    cursor: pointer;
+    /* Mouse-over effects */
+    &:hover {
+        // opacity: 1; /* Fully shown on mouse-over */
+        background: #d3d3d3;
+    }
+
+    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 15px; /* Set a specific slider handle width */
+        height: 15px; /* Slider handle height */
+        background: $color-blue; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+        border-radius: 50px;
+        box-shadow: 0px 5px 13px 0px #1f58d18c;
+    }
+
+    &::-moz-range-thumb {
+        width: 15px; /* Set a specific slider handle width */
+        height: 15px; /* Slider handle height */
+        background: $color-blue; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+        border-radius: 50px;
+        box-shadow: 0px 5px 13px 0px #1f58d18c;
+    }
+}

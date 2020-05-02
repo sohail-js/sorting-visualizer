@@ -12,12 +12,13 @@ function getElements(elements) {
 }
 
 
-var barsData = []
+var barsData = [];
+var barsDataCopy = [];
 
 const { barsElement, sliderElement, toggleAnimationBtn, stopAnimationBtn, generateArrayBtn, arraySizeSliderElement, animationSpeedSliderElement, sortingAlgorithms } = getElements(['barsElement', 'sliderElement', 'toggleAnimationBtn', 'stopAnimationBtn', 'generateArrayBtn', 'arraySizeSliderElement', 'animationSpeedSliderElement', 'sortingAlgorithms']);
 
 var ANIMATION_SPEED = 1;
-var ARRAY_SIZE = 4;
+var ARRAY_SIZE = 150;
 // var WIDTH = window.visualViewport.width;
 
 let interval;
@@ -77,7 +78,7 @@ function genArray() {
     for (let i = 0; i < ARRAY_SIZE; i++) {
         barsData.push((Math.random() * (max - min) + min));
     }
-
+    barsDataCopy = barsData.slice();
     sort();
     // renderFrame({ arr: barsData });
     setSlider(0);
@@ -87,10 +88,14 @@ function genArray() {
  * Sort the array and generate animated frames based on selected sorting algorithm
  */
 function sort() {
+    // console.log(barsData);
+    barsData = barsDataCopy.slice(0);
+
     let result = sorting[sortingAlgorithms.value](barsData);
     animationFrames = result.animationFrames;
     renderBars = result.renderBars;
-    sliderElement.setAttribute('max', animationFrames.length - 1)
+    sliderElement.setAttribute('max', animationFrames.length - 1);
+    setSlider(sliderElement.value);
 }
 
 
@@ -161,6 +166,6 @@ stopAnimationBtn.onclick = stopAnimation;
 generateArrayBtn.onclick = genArray;
 
 sortingAlgorithms.onchange = () => {
-    genArray();
-    // sort();
+    // genArray();
+    sort();
 };

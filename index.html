@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sort Visualizer</title>
 
-    <link rel="stylesheet" href="https://materialdesignicons.com/cdn/2.0.46/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://materialdesignicons.com/cdn/5.1.45/css/materialdesignicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
     <!-- <script src="sorting-algorithms.js"></script> -->
-    <script type="module" src="app.js"></script>
+    <script type="module" src="app/app.js"></script>
 </head>
 
 <body>
     <div class="page-wrapper">
         <div class="toolbar toolbar-top">
-            <button id="generateArrayBtn">Generate Array</button>
+            <button id="generateArrayBtn" class="btn btn-primary-outline">Generate Array</button>
 
             <!-- Array Size -->
             <div class="slider-container">
                 <label for="arraySizeSliderElement">Array size</label>
-                <input type="range" min="4" max="200" value="4" class="slider" id="arraySizeSliderElement">
+                <input type="range" min="4" max="200" value="150" class="slider" id="arraySizeSliderElement">
             </div>
 
             <!-- Animation SPeed -->
@@ -35,8 +36,8 @@
 
             <!-- Sorting Algorithm -->
             <select name="sorting-algorithms" id="sortingAlgorithms">
-                <option value="mergeSort">Merge Sort</option>
-                <option value="quickSort" selected>Quick Sort</option>
+                <option value="mergeSort" selected>Merge Sort</option>
+                <option value="quickSort">Quick Sort</option>
             </select>
         </div>
 
@@ -48,10 +49,10 @@
             </div>
 
             <div class="toolbar toolbar-bottom">
-                <button id="toggleAnimationBtn" class="btn-toggle" title="Play / Pause">
+                <button id="toggleAnimationBtn" class="btn btn-primary btn-rounded" title="Play / Pause">
                     <i class="mdi mdi-play"></i>
                 </button>
-                <button id="stopAnimationBtn" class="btn-stop" title="Stop">
+                <button id="stopAnimationBtn" class="btn btn-rounded btn-secondary" title="Stop">
                     <i class="mdi mdi-stop"></i>
                 </button>
                 <!-- <button onclick="pauseAnimation()">Pause</button> -->

@@ -1,0 +1,24 @@
+{
+  "name": "sorting-visualizer",
+  "version": "1.0.0",
+  "description": "Sorting algorithms visualizer in Vanilla JavaScript",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cs": "node-sass assets/style.scss assets/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdulsohailmohd/sorting-visualizer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abdulsohailmohd/sorting-visualizer/issues"
+  },
+  "homepage": "https://github.com/abdulsohailmohd/sorting-visualizer#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.0"
+  }
+}
