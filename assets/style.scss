@@ -240,3 +240,23 @@ select {
         box-shadow: 0px 5px 13px 0px #1f58d18c;
     }
 }
+
+
+// CROSS-BROWSER COMPATIBILITY
+// MS Edge
+@supports (-ms-ime-align:auto) {
+    
+    .slider-container {
+        width: 200px;
+    }
+    .bottom {
+        .slider-container {
+            width: 800px;
+            margin: 0 auto;
+        }
+    }
+
+    .slider{
+        background-color: #fff;
+    }
+}

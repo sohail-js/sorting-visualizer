@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
     <!-- <script src="sorting-algorithms.js"></script> -->
+    <script src="https://polyfill.io/v3/polyfill.js"></script>
     <script type="module" src="app/app.js"></script>
 </head>
 
@@ -59,6 +60,32 @@
             </div>
         </div>
     </div>
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCwP4hpK8XkZKjqmSfIPEhfj8ZidUavZpw",
+            authDomain: "sorting-visualizer-js.firebaseapp.com",
+            databaseURL: "https://sorting-visualizer-js.firebaseio.com",
+            projectId: "sorting-visualizer-js",
+            storageBucket: "sorting-visualizer-js.appspot.com",
+            messagingSenderId: "629078559616",
+            appId: "1:629078559616:web:c10f670da4ebf447400f65",
+            measurementId: "G-TLNRTHPBXH"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
 </body>
 
 </html>

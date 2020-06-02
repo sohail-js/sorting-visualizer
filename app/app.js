@@ -24,7 +24,7 @@ var ARRAY_SIZE = 150;
 let interval;
 
 sliderElement.addEventListener('input', (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     renderFrame(e.target.value)
 })
 
@@ -73,7 +73,7 @@ function genArray() {
     animationFrames = [];
     barsData = [];
     let min = 1;
-    let max = window.visualViewport.height - 250;
+    let max = window.innerHeight - 250;
 
     for (let i = 0; i < ARRAY_SIZE; i++) {
         barsData.push((Math.random() * (max - min) + min));
