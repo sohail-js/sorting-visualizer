@@ -241,11 +241,39 @@ select {
     }
 }
 
+// CREDITS
+.credits {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    // border: 1px solid blue;
+    box-shadow: 0 0 8px 3px #0a0a0a5c;
+    padding: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    
+    > div{
+        transition: all .1s;
+        img{
+            width: 20px;
+            height: 20px;
+        }
+
+        &:not(:first-child){
+            margin-top: 5px;
+        }
+
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}
 
 // CROSS-BROWSER COMPATIBILITY
 // MS Edge
-@supports (-ms-ime-align:auto) {
-    
+@supports (-ms-ime-align: auto) {
     .slider-container {
         width: 200px;
     }
@@ -256,7 +284,7 @@ select {
         }
     }
 
-    .slider{
+    .slider {
         background-color: #fff;
     }
 }
